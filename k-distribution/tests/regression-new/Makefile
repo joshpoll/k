@@ -44,6 +44,7 @@ SUBDIRS=issue-2273 \
 	cast \
 	help \
 	exit-code-no-gen-top \
+	kast-default-output \
 
 
 include ../../include/ktest-group.mak
