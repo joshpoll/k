@@ -1116,8 +1116,8 @@ public class SymbolicRewriter {
                     new FormulaContext(FormulaContext.Kind.SpecRule, specRule, global), specRule.matchingSymbols());
             if (constraint != null) {
                 if (global.javaExecutionOptions.logRulesPublic) {
-                    System.err.format("\nSpec rule matched, building result for: %s %s\n-------------------------\n",
-                            specRule.getSource(), specRule.getLocation());
+                    System.err.format("\nSpec rule matched, building result for: %s %s\n%s\n-------------------------\n",
+                            specRule.getSource(), specRule.getLocation(), specRule);
                 }
                 global.stateLog.log(StateLog.LogEvent.SRULEATTEMPT, specRule.toKRewrite(), constrainedTerm.term(), constrainedTerm.constraint());
                 ConstrainedTerm result = buildResult(specRule, constraint, null, true, constrainedTerm.termContext(),
