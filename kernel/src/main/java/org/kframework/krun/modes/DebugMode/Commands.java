@@ -84,7 +84,7 @@ public class Commands {
             CommandUtils utils = new CommandUtils(isSource);
             DebuggerState requestedState = session.getActiveState();
             if (requestedState != null) {
-                new KPrint(compiledDefinition.kompileOptions).prettyPrint(compiledDefinition.getParsedDefinition(), compiledDefinition.languageParsingModule(), s -> utils.print(s), requestedState.getCurrentK(), ColorSetting.ON);
+                utils.print(new KPrint(compiledDefinition.kompileOptions).prettyPrint(compiledDefinition.getParsedDefinition(), compiledDefinition.languageParsingModule(), requestedState.getCurrentK(), ColorSetting.ON, OutputModes.JSON));
             } else {
                 throw KEMException.debuggerError("\"Requested State/Configuration Unreachable\",");
             }
